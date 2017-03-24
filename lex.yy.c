@@ -653,7 +653,7 @@ YY_DECL
 	register char *yy_cp, *yy_bp;
 	register int yy_act;
     
-#line 20 "analisador_lexico_lalg.l"
+#line 44 "analisador_lexico_lalg.l"
 
 #line 659 "lex.yy.c"
 
@@ -740,17 +740,17 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 21 "analisador_lexico_lalg.l"
+#line 45 "analisador_lexico_lalg.l"
 printf("%s - tipo_var", yytext);
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 22 "analisador_lexico_lalg.l"
+#line 46 "analisador_lexico_lalg.l"
 printf("%s - NADA!", yytext);
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 23 "analisador_lexico_lalg.l"
+#line 47 "analisador_lexico_lalg.l"
 ECHO;
 	YY_BREAK
 #line 757 "lex.yy.c"
@@ -1751,7 +1751,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 23 "analisador_lexico_lalg.l"
+#line 47 "analisador_lexico_lalg.l"
 
 
 
