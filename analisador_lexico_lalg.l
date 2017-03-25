@@ -22,8 +22,7 @@ string          (\"){letra}*(\")
 char            (\'){letra}*(\')
 string_m_form   (\"){letra}*|{letra}*(\")
 char_m_form     (\'){letra}*|{letra}*(\')
-coment_m_form   \{({letra}|{digito}|{char_especial})*
-coment          \{({letra}|{digito}|{char_especial})*\}
+coment          "{".*"}"
 
     int num_linhas = 1;
 
@@ -44,7 +43,7 @@ end  	        printf("%s -> end \n", yytext);
 {op_ad}         printf("%s -> op_ad\n", yytext);
 {op_mul}        printf("%s -> op_mul\n", yytext);
 {tipo_var}  	printf("%s -> tipo_var \n", yytext);
-coment        
+{coment}
 {ident}         printf("%s -> id \n", yytext);
 " "             
 {numero_int}    printf("%s -> numero_int\n", yytext);
@@ -59,7 +58,6 @@ coment
 {string_m_form} printf("%s -> string_m_form (linha %d)\n", yytext, num_linhas);
 {char}          printf("%s -> caractere\n", yytext);
 {char_m_form}   printf("%s -> caractere_m_form (linha %d)\n", yytext, num_linhas);
-{coment_m_form} printf("%s -> comentario_n_fechado (linha %d)\n", yytext, num_linhas);
 %%
 
 int main(int argc, char *argv[])
