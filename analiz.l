@@ -5,8 +5,8 @@ Kollins Gabriel Lima - 9012931
 
 letra           [a-z]|[A-Z]
 digito          [0-9]
-ident		    {letra}({letra}|{digito})*|_({letra}|{digito})*
-tipo_var	    real|integer
+ident           {letra}({letra}|{digito})*|_({letra}|{digito})*
+tipo_var        real|integer
 comandos        read|write|if|then|else
 relacao         =|<>|>=|>|<
 op_ad           \+|\-
@@ -23,35 +23,34 @@ char            (\'){letra}*(\')
 string_m_form   (\"){letra}*|{letra}*(\")
 char_m_form     (\'){letra}*|{letra}*(\')
 coment_m_form   \{({letra}|{digito}|{char_especial})*
-coment          \{({letra}|{digito}|{char_especial})*\}
 
     int num_linhas = 1;
 
 
 %%
-program  	    printf("%s -> programa \n", yytext);
+program         printf("%s -> programa \n", yytext);
 {comandos}      printf("%s -> comando \n", yytext);
-var  	        printf("%s -> var \n", yytext);
-begin  	        printf("%s -> begin \n", yytext);
-end  	        printf("%s -> end \n", yytext);
+var             printf("%s -> var \n", yytext);
+begin           printf("%s -> begin \n", yytext);
+end             printf("%s -> end \n", yytext);
 ;               printf("%s -> simbolo_pt_vg\n", yytext);
 :               printf("%s -> simbolo_dois_pt\n", yytext);
 \.              printf("%s -> simbolo_pt\n", yytext);
-,               printf("%s -> simbolo_vg\n", yytext);
+\,               printf("%s -> simbolo_vg\n", yytext);
 \(              printf("%s -> simbolo_abre_parenteses\n", yytext);
 \)              printf("%s -> simbolo_fecha_parenteses\n", yytext);
 {relacao}       printf("%s -> op_relacional\n", yytext);
 {op_ad}         printf("%s -> op_ad\n", yytext);
 {op_mul}        printf("%s -> op_mul\n", yytext);
-{tipo_var}  	printf("%s -> tipo_var \n", yytext);
-coment        
+{tipo_var}      printf("%s -> tipo_var \n", yytext);
+"{".*"}"        
 {ident}         printf("%s -> id \n", yytext);
 " "             
+{char_especial} printf(%s -> caractere_invalido (linha %d)\n", yytext, num_linhas);
 {numero_int}    printf("%s -> numero_int\n", yytext);
 {numero_real}   printf("%s -> numero_real\n", yytext);
 {intervalo_real} printf("%s -> intervalo_real\n", yytext);
 \n              ++num_linhas;
-{char_especial} printf("%s -> caractere_invalido (linha %d)\n", yytext, num_linhas);
 {atribuicao}    printf("%s -> atribuicao\n", yytext);
 {id_mal_form}   printf("%s -> id_mal_formado (linha %d)\n", yytext, num_linhas);
 {num_m_form}    printf("%s -> num_mal_formado (linha %d)\n", yytext, num_linhas);
