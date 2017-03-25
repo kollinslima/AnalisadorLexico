@@ -13,7 +13,8 @@ op_ad           \+|\-
 op_mul          \*|\/
 numero_int      [0-9]{1,5}
 int_mto_grande  [0-9]{6,}
-numero_real     [0-9]+\.[0-9]+
+numero_real     [0-9]{1,6}\.[0-9]{1,6}
+real_mto_grande [0-9]{6,}\.[0-9]{6,}
 atribuicao      :=
 intervalo_real  \[{numero_real},{numero_real}\]
 char_especial   \!|\@|\#|\$|\%|\&|\§|\º|\?|\°|\ª
@@ -52,6 +53,7 @@ coment
 {numero_real}   printf("%s -> numero_real\n", yytext);
 {int_mto_grande}   printf("%s -> int_mto_grande (linha %d)\n", yytext, num_linhas);
 {intervalo_real} printf("%s -> intervalo_real\n", yytext);
+{real_mto_grande}   printf("%s -> real_mto_grande (linha %d)\n", yytext, num_linhas);
 \n              ++num_linhas;
 {char_especial} printf("%s -> caractere_invalido (linha %d)\n", yytext, num_linhas);
 {atribuicao}    printf("%s -> atribuicao\n", yytext);

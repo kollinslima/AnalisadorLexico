@@ -14,6 +14,7 @@ begin
 b:=b+2;
 a:=a-1;
 banana:=33333333333333333333333333
+nanano:=343333333333333.122344
 end;
 if a <> b then write (a) ;
 end .
