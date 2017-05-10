@@ -1,7 +1,9 @@
-<
-A
->
-+
-{stupid comment with no use 09302@!%%@!}
-id3n71f1c4d0r
-real
+program lalg;
+begin
+read(a1);
+read(a1);
+write(a1);
+a := 1;
+end.
+
+

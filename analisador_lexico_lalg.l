@@ -1,6 +1,7 @@
 /*
 Afonso Henrique da Silva - 8910347
 Kollins Gabriel Lima - 9012931
+Lais Paiva - 7960939
 */
 
 letra           [a-z]|[A-Z]
@@ -17,7 +18,7 @@ numero_real     [0-9]{1,6}\.[0-9]{1,6}
 real_mto_grande [0-9]{6,}\.[0-9]{6,}
 atribuicao      :=
 intervalo_real  \[{numero_real},{numero_real}\]
-char_especial   \!|\@|\#|\$|\%|\&|\§|\º|\?|\°|\ª
+char_especial   \!|\@|\#|\$|\%|\&|\§|\º|\?|\°|\ª|\{|\}
 id_mal_form     {digito}({letra}|{digito})*|({letra}|{digito}|{char_especial})*
 num_m_form      {digito}.({letra}|{digito}|{char_especial})+
 string          (\"){letra}*(\")
@@ -63,6 +64,7 @@ end  	        printf("%s -> end \n", yytext);
 {char}          printf("%s -> caractere\n", yytext);
 {char_m_form}   printf("%s -> caractere_m_form (linha %d)\n", yytext, num_linhas);
 %%
+
 
 int main(int argc, char *argv[])
 {
