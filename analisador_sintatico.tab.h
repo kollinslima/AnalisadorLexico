@@ -78,7 +78,7 @@ extern int yydebug;
 typedef union YYSTYPE YYSTYPE;
 union YYSTYPE
 {
-#line 7 "analisador_sintatico.y" /* yacc.c:1909  */
+#line 10 "analisador_sintatico.y" /* yacc.c:1909  */
 
   char *sval;  
   float fval;

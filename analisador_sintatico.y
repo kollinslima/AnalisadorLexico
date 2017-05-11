@@ -3,6 +3,9 @@
 %}
 
 // Symbols.
+%define parse.error verbose
+%define parse.lac full
+
 %union
 {
   char *sval;  
@@ -187,6 +190,7 @@ Numero:
   
 int yyerror(char *s) {
   printf("yyerror : %s\n",s);
+  return 0;
 }
 
 int main(void) {
