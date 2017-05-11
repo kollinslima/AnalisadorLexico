@@ -1,9 +1,9 @@
 program lalg;
 begin
 read(a1);
-read(a1);
+read($);
 write(a1);
-a := 1;
-end.
+a := 1
+end
 
 

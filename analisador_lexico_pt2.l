@@ -60,16 +60,16 @@ end  	            {printf("%s -> end \n", yytext); return END;}
 " "             
 {numero_int}        {printf("%s -> numero_int\n", yytext); return INTEIRO;}
 {numero_real}       {printf("%s -> numero_real\n", yytext); return REAL;}
-{int_mto_grande}    printf("%s -> int_mto_grande (linha %d)\n", yytext, num_linhas);
+{int_mto_grande}    printf("%s -> int_mto_grande (Lexico - linha %d)\n", yytext, num_linhas);
 {intervalo_real}    printf("%s -> intervalo_real\n", yytext);
-{real_mto_grande}   printf("%s -> real_mto_grande (linha %d)\n", yytext, num_linhas);
+{real_mto_grande}   printf("%s -> real_mto_grande (Lexico - linha %d)\n", yytext, num_linhas);
 \n                  ++num_linhas;
-{char_especial}     printf("%s -> caractere_invalido (linha %d)\n", yytext, num_linhas);
+{char_especial}     printf("%s -> caractere_invalido (Lexico - linha %d)\n", yytext, num_linhas);
 {atribuicao}        {printf("%s -> atribuicao\n", yytext); return RECEBE;}
-{id_mal_form}       printf("%s -> id_mal_formado (linha %d)\n", yytext, num_linhas);
-{num_m_form}        printf("%s -> num_mal_formado (linha %d)\n", yytext, num_linhas);
+{id_mal_form}       printf("%s -> id_mal_formado (Lexico - linha %d)\n", yytext, num_linhas);
+{num_m_form}        printf("%s -> num_mal_formado (Lexico - linha %d)\n", yytext, num_linhas);
 {string}            printf("%s -> string\n", yytext);
-{string_m_form}     printf("%s -> string_m_form (linha %d)\n", yytext, num_linhas);
+{string_m_form}     printf("%s -> string_m_form (Lexico - linha %d)\n", yytext, num_linhas);
 {char}              printf("%s -> caractere\n", yytext);
-{char_m_form}       printf("%s -> caractere_m_form (linha %d)\n", yytext, num_linhas);
+{char_m_form}       printf("%s -> caractere_m_form (Lexico - linha %d)\n", yytext, num_linhas);
 %%

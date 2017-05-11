@@ -127,7 +127,7 @@ Comandos:
   ;
   
 Cmd:
-  RW ABRE_P Variaveis FECHA_P
+  RW ABRE_P Variaveis FECHA_P   
   |IF Condicao THEN Cmd Else
   |ID RECEBE Expressao
   |ID Lista_arg

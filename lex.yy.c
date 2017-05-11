@@ -1124,7 +1124,7 @@ YY_RULE_SETUP
 case 27:
 YY_RULE_SETUP
 #line 63 "analisador_lexico_pt2.l"
-printf("%s -> int_mto_grande (linha %d)\n", yytext, num_linhas);
+printf("%s -> int_mto_grande (Lexico - linha %d)\n", yytext, num_linhas);
 	YY_BREAK
 case 28:
 YY_RULE_SETUP
@@ -1134,7 +1134,7 @@ printf("%s -> intervalo_real\n", yytext);
 case 29:
 YY_RULE_SETUP
 #line 65 "analisador_lexico_pt2.l"
-printf("%s -> real_mto_grande (linha %d)\n", yytext, num_linhas);
+printf("%s -> real_mto_grande (Lexico - linha %d)\n", yytext, num_linhas);
 	YY_BREAK
 case 30:
 /* rule 30 can match eol */
@@ -1145,7 +1145,7 @@ YY_RULE_SETUP
 case 31:
 YY_RULE_SETUP
 #line 67 "analisador_lexico_pt2.l"
-printf("%s -> caractere_invalido (linha %d)\n", yytext, num_linhas);
+printf("%s -> caractere_invalido (Lexico - linha %d)\n", yytext, num_linhas);
 	YY_BREAK
 case 32:
 YY_RULE_SETUP
@@ -1155,12 +1155,12 @@ YY_RULE_SETUP
 case 33:
 YY_RULE_SETUP
 #line 69 "analisador_lexico_pt2.l"
-printf("%s -> id_mal_formado (linha %d)\n", yytext, num_linhas);
+printf("%s -> id_mal_formado (Lexico - linha %d)\n", yytext, num_linhas);
 	YY_BREAK
 case 34:
 YY_RULE_SETUP
 #line 70 "analisador_lexico_pt2.l"
-printf("%s -> num_mal_formado (linha %d)\n", yytext, num_linhas);
+printf("%s -> num_mal_formado (Lexico - linha %d)\n", yytext, num_linhas);
 	YY_BREAK
 case 35:
 YY_RULE_SETUP
@@ -1170,7 +1170,7 @@ printf("%s -> string\n", yytext);
 case 36:
 YY_RULE_SETUP
 #line 72 "analisador_lexico_pt2.l"
-printf("%s -> string_m_form (linha %d)\n", yytext, num_linhas);
+printf("%s -> string_m_form (Lexico - linha %d)\n", yytext, num_linhas);
 	YY_BREAK
 case 37:
 YY_RULE_SETUP
@@ -1180,7 +1180,7 @@ printf("%s -> caractere\n", yytext);
 case 38:
 YY_RULE_SETUP
 #line 74 "analisador_lexico_pt2.l"
-printf("%s -> caractere_m_form (linha %d)\n", yytext, num_linhas);
+printf("%s -> caractere_m_form (Lexico - linha %d)\n", yytext, num_linhas);
 	YY_BREAK
 case 39:
 YY_RULE_SETUP
