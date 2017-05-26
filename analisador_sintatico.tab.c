@@ -66,7 +66,9 @@
 
 #include <stdio.h>
 
-#line 70 "analisador_sintatico.tab.c" /* yacc.c:339  */
+extern int num_linhas;
+
+#line 72 "analisador_sintatico.tab.c" /* yacc.c:339  */
 
 # ifndef YY_NULLPTR
 #  if defined __cplusplus && 201103L <= __cplusplus
@@ -134,14 +136,14 @@ extern int yydebug;
 typedef union YYSTYPE YYSTYPE;
 union YYSTYPE
 {
-#line 10 "analisador_sintatico.y" /* yacc.c:355  */
+#line 13 "analisador_sintatico.y" /* yacc.c:355  */
 
   char *sval;  
   float fval;
   int	ival;
 	
 
-#line 145 "analisador_sintatico.tab.c" /* yacc.c:355  */
+#line 147 "analisador_sintatico.tab.c" /* yacc.c:355  */
 };
 # define YYSTYPE_IS_TRIVIAL 1
 # define YYSTYPE_IS_DECLARED 1
@@ -156,7 +158,7 @@ int yyparse (void);
 
 /* Copy the second part of user declarations.  */
 
-#line 160 "analisador_sintatico.tab.c" /* yacc.c:358  */
+#line 162 "analisador_sintatico.tab.c" /* yacc.c:358  */
 
 #ifdef short
 # undef short
@@ -433,12 +435,12 @@ static const yytype_uint8 yytranslate[] =
   /* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
 static const yytype_uint8 yyrline[] =
 {
-       0,    47,    47,    51,    55,    58,    60,    63,    65,    69,
-      73,    76,    78,    81,    83,    86,    88,    92,    95,    97,
-     101,   105,   108,   110,   114,   117,   119,   122,   124,   127,
-     129,   133,   134,   135,   136,   137,   141,   145,   149,   152,
-     154,   157,   159,   163,   167,   170,   172,   176,   180,   181,
-     182,   186,   187
+       0,    50,    50,    54,    58,    61,    63,    66,    68,    72,
+      76,    79,    81,    84,    86,    89,    91,    95,    98,   100,
+     104,   108,   111,   113,   117,   120,   122,   125,   127,   130,
+     132,   136,   137,   138,   139,   140,   144,   148,   152,   155,
+     157,   160,   162,   166,   170,   173,   175,   179,   183,   184,
+     185,   189,   190
 };
 #endif
 
@@ -1531,7 +1533,7 @@ yyreduce:
     switch (yyn)
       {
         
-#line 1535 "analisador_sintatico.tab.c" /* yacc.c:1646  */
+#line 1537 "analisador_sintatico.tab.c" /* yacc.c:1646  */
         default: break;
       }
     if (yychar_backup != yychar)
@@ -1771,11 +1773,11 @@ yyreturn:
 #endif
   return yyresult;
 }
-#line 189 "analisador_sintatico.y" /* yacc.c:1906  */
+#line 192 "analisador_sintatico.y" /* yacc.c:1906  */
 
   
 int yyerror(char *s) {
-  printf("yyerror : %s\n",s);
+  printf("%s (Sintatico - linha: %d)\n",s,num_linhas);
   return 0;
 }
 

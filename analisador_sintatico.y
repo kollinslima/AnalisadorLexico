@@ -1,10 +1,13 @@
 %{
 #include <stdio.h>
+
+extern int num_linhas;
 %}
 
 // Symbols.
 %define parse.error verbose
 %define parse.lac full
+
 
 %union
 {
@@ -189,7 +192,7 @@ Numero:
 %%
   
 int yyerror(char *s) {
-  printf("yyerror : %s\n",s);
+  printf("%s (Sintatico - linha: %d)\n",s,num_linhas);
   return 0;
 }
 
