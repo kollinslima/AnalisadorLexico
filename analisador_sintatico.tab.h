@@ -62,14 +62,15 @@ extern int yydebug;
     PROGRAMA_ID = 272,
     PV = 273,
     REAL = 274,
-    TIPO_VAR = 275,
-    VAR = 276,
-    VIRGULA = 277,
-    RW = 278,
-    RECEBE = 279,
-    IF = 280,
-    THEN = 281,
-    ELSE = 282
+    IVAL_REAL = 275,
+    TIPO_VAR = 276,
+    VAR = 277,
+    VIRGULA = 278,
+    RW = 279,
+    RECEBE = 280,
+    IF = 281,
+    THEN = 282,
+    ELSE = 283
   };
 #endif
 
@@ -85,7 +86,7 @@ union YYSTYPE
   int	ival;
 	
 
-#line 89 "analisador_sintatico.tab.h" /* yacc.c:1909  */
+#line 90 "analisador_sintatico.tab.h" /* yacc.c:1909  */
 };
 # define YYSTYPE_IS_TRIVIAL 1
 # define YYSTYPE_IS_DECLARED 1

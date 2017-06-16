@@ -1,0 +1,7 @@
+program lalg;
+{entrada}
+const c = 2;
+var a: integer
+begin
+read(a, a, a);
+end.

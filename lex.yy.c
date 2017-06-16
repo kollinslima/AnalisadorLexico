@@ -1129,7 +1129,7 @@ printf("%s -> int_mto_grande (Lexico - linha %d)\n", yytext, num_linhas);
 case 28:
 YY_RULE_SETUP
 #line 64 "analisador_lexico_pt2.l"
-printf("%s -> intervalo_real\n", yytext);
+{printf("%s -> intervalo_real\n", yytext); return IVAL_REAL;}
 	YY_BREAK
 case 29:
 YY_RULE_SETUP

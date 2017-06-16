@@ -1,6 +1,7 @@
 program lalg;
-{entrada}
-var a: integer;
 begin
-readd(a, @, 1);
-end.
+read(a1);
+read(a2)
+write(a1);
+a := 1;
+end

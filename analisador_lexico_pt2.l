@@ -61,7 +61,7 @@ end  	            {printf("%s -> end \n", yytext); return END;}
 {numero_int}        {printf("%s -> numero_int\n", yytext); return INTEIRO;}
 {numero_real}       {printf("%s -> numero_real\n", yytext); return REAL;}
 {int_mto_grande}    printf("%s -> int_mto_grande (Lexico - linha %d)\n", yytext, num_linhas);
-{intervalo_real}    printf("%s -> intervalo_real\n", yytext);
+{intervalo_real}    {printf("%s -> intervalo_real\n", yytext); return IVAL_REAL;}
 {real_mto_grande}   printf("%s -> real_mto_grande (Lexico - linha %d)\n", yytext, num_linhas);
 \n                  ++num_linhas;
 {char_especial}     printf("%s -> caractere_invalido (Lexico - linha %d)\n", yytext, num_linhas);

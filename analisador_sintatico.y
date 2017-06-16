@@ -34,6 +34,7 @@ extern int num_linhas;
 %token PROGRAMA_ID
 %token PV
 %token REAL
+%token IVAL_REAL
 %token TIPO_VAR
 %token VAR
 %token VIRGULA
@@ -61,15 +62,19 @@ Dc:
 Dc_c:
   /* lambda */
   | CONST ID IGUAL Numero PV Dc_c
+  | error VAR {yyerrok;}
   ;
 
 Dc_v:
   /* lambda */
   | VAR Variaveis DP Tipo_var PV Dc_v
+  | error PROCEDURE {yyerrok;}
+  | error COMECO {yyerrok;}
   ;
 
 Tipo_var:
   TIPO_VAR
+  |IVAL_REAL
   ;
 
 Variaveis:
@@ -84,6 +89,8 @@ Mais_var:
 Dc_p:
   /* lambda */
   | PROCEDURE ID Parametros PV Corpo_p Dc_p
+  | error PROCEDURE
+  | error COMECO
   ;
   
 Parametros:
@@ -134,14 +141,18 @@ Comandos:
   
 Cmd:
   RW ABRE_P Variaveis FECHA_P   
-  |IF Condicao THEN Cmd Else
+  |IF Condicao THEN Comandos Else
   |ID RECEBE Expressao
   |ID Lista_arg
   |COMECO Comandos END
+  | error Cmd {yyerrok;}
+  | error PV
+  | error END {yyerrok;}
   ;
 
 Condicao:
   Expressao Relacao Expressao
+  |error THEN
   ;
 
 Expressao:

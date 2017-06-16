@@ -1,0 +1,20 @@
+program nome1 ;
+{ exemplo 1}
+var a,a1,b:integer;
+var teste : [12.4,34.7];
+begin
+read(a);
+a:= a * 2;
+read(b);        
+b:=b+2;
+if a <> b then 
+a1:= a-1;
+else
+begin
+b:=b+2;
+a:=a-1;
+banana:=33333333333333333333333333
+nanano:=343333333333333.122344
+end;
+if a <> b then write (a) ;
+end .
